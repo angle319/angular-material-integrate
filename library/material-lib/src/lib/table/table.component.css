@@ -1,0 +1,48 @@
+table {
+  width: 100%;
+}
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+
+.ripple:hover {
+  background: white radial-gradient(circle at 0% 50%, transparent 1%, white 100%) center/15000%;
+}
+
+.ripple:active {
+  background-color: #ccc;
+  background-size: 100%;
+  transition: background 0s;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table-search-panel {
+  min-height: 58px;
+  padding: 8px 24px 0;
+}
+
+.mat-select-row{
+   background: #eeeeee 
+}
+.mat-column-_select {
+  flex: 0 0 10% !important;
+  min-width: 40px !important;
+}
+.mat-column-_editor {
+  flex: 0 0 10% !important;
+  min-width: 100px !important;
+  text-align: center;
+}
+.scroll-auto-table {
+  margin: 5px 7px 0px 7px;
+  width: calc(100% - 14px);
+}
+.scroll-auto-paginator {
+  margin: 0px 7px 15px 7px;
+  width: calc(100% - 14px);
+}

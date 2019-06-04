@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "material-lib": [
+        "dist/material-lib"
+      ],
+      "material-lib/*": [
+        "dist/material-lib/*"
+      ]
+    }
   }
 }
