@@ -77,7 +77,6 @@ library.add(
   ],
   exports: [
     FontAwesomeModule,
-
   ]
 })
 export class FontAwesomeCommonModule {}
