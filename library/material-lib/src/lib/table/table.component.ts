@@ -64,12 +64,7 @@ export class TableComponent implements OnInit, AfterContentInit {
     if (this.isMultiSelect) {
       this.cell_index = 0;
     }
-    if (!this.editParams.includes('edit')) {
-      this.icon_edit = false;
-    }
-    if (!this.editParams.includes('del')) {
-      this.icon_del = false;
-    }
+
     // this.dataSource = [{ position: '1234', filename: '45545', filesize: '1234' }]
   }
 
@@ -84,6 +79,12 @@ export class TableComponent implements OnInit, AfterContentInit {
           this.filterGlobal(value);
         }
       );
+    if (!this.editParams.includes('edit')) {
+      this.icon_edit = false;
+    }
+    if (!this.editParams.includes('del')) {
+      this.icon_del = false;
+    }
   }
   onClickRow(row, index) {
     const key = this.alias_multi;

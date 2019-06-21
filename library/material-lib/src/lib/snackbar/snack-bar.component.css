@@ -1,0 +1,57 @@
+::ng-deep .snack-panel-success {
+  background-color: #00b300;
+}
+
+::ng-deep .snack-panel-warning {
+  background-color: #ffba01;
+}
+
+::ng-deep .snack-panel-error {
+  background-color: #e91224;
+}
+
+
+
+.snack-title {
+  margin-right: auto !important;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.toast-header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: .25rem .75rem;
+  color: #6c757d;
+  background-clip: padding-box;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+
+.toast-body {
+  color: #fff;
+  padding: .75rem;
+  font-size: .875rem;
+}
+
+.close {
+  float: right;
+  font-size: 1.0rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 20px;
+  padding: 2px;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .55;
+  /* padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  cursor: pointer; */
+}
+
+.close:hover {
+  opacity: .7;
+}

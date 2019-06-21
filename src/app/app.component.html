@@ -3,9 +3,9 @@
 
 <div class="content">
   <h2>Dialog</h2>
-  <!-- <button mat-> -->
   <h2>Table</h2>
-  <mvb-list (onRowSelect)="click_test($event)" [total]="20" [columnHeaders]="displayedColumns" [dataSource]="dataSource" class="w-100" (onLazyLoad)="changeAPI($event)">
+  <mvb-list (onRowSelect)="click_test($event)" [total]="20" [columnHeaders]="displayedColumns" [dataSource]="dataSource" class="w-100" (onLazyLoad)="changeAPI($event)"
+  [isMultiSelect]="true">
     <ng-template mvbCol let-input cell="1" styleClass="a-col">
      <div style="color:wheat;width:50% ;">{{input}}</div>
      
@@ -20,5 +20,6 @@
        </ng-template>
  </mvb-list>
 </div>
+<div (click)="onClick()">click</div>
 
 <router-outlet></router-outlet>

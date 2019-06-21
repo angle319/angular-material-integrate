@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MaterialLibModule } from 'library/material-lib/src/public-api';
+import { MaterialTableModule, MaterialSnackModule } from 'library/material-lib/src/public-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { MaterialLibModule } from 'material-lib';
 @NgModule({
@@ -13,7 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialLibModule,
+    MaterialTableModule,
+    MaterialSnackModule,
     BrowserAnimationsModule
   ],
   providers: [],
