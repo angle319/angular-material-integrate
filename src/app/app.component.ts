@@ -5,14 +5,24 @@ import { SnackbarService } from 'library/material-lib/src/public-api';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers:[SnackbarService]
+  providers: [SnackbarService]
 })
 export class AppComponent implements OnInit {
+  list = ['a', 'b', 'c', 'time']
   displayedColumns = ['a', 'b', 'c', 'time']
   dataSource = [{ a: 'abc', b: '45545', c: '12d34', time: new Date() },
   { a: 'abc', b: '45545', c: '1234', time: new Date() }];
   title = 'myviewboard';
-  constructor(public snackbarService:SnackbarService){
+  message;
+
+  sidebar = [{
+    text: 'test',
+    _child: [{
+      route_url: '1234',
+      text: 'test',
+    }]
+  }]
+  constructor(public snackbarService: SnackbarService) {
 
   }
   ngOnInit() {
@@ -24,7 +34,23 @@ export class AppComponent implements OnInit {
   changeAPI(event) {
     console.log(event)
   }
-  onClick(){
-     this.snackbarService.openSuccess(`asdfsd`)
+  onClickToast(success = 'success') {
+    switch (success) {
+      case 'success':
+        this.snackbarService.openSuccess(this.message)
+        break;
+      case 'warning':
+        this.snackbarService.openWarning(this.message)
+        break;
+      case 'error':
+        this.snackbarService.openError(this.message)
+        break;
+      case 'customer':
+        this.snackbarService.openCustomerStyle(this.title, this.message, 'my-panel')
+        break;
+      default:
+        break;
+    }
+
   }
 }

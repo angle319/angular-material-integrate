@@ -3,7 +3,7 @@ import { NgModule, Component } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MaterialTableModule, MaterialSnackModule } from 'library/material-lib/src/public-api';
+import { MaterialTableModule, MaterialSnackModule, MaterialSidebarModule, MaterialToolBarModule  } from 'library/material-lib/src/public-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { MaterialLibModule } from 'material-lib';
 @NgModule({
@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     MaterialTableModule,
     MaterialSnackModule,
+    MaterialSidebarModule,
+    MaterialToolBarModule,
     BrowserAnimationsModule
   ],
   providers: [],

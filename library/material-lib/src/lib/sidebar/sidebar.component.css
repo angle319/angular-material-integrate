@@ -1,0 +1,7 @@
+::ng-deep .mat-expansion-panel-header {
+  font-size: 16px
+}
+
+::ng-deep .mat-expansion-panel-content > .mat-expansion-panel-body {
+    padding: 0;
+  }
