@@ -9,6 +9,7 @@ import {
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { SnackbarComponent } from './snackbar.component';
 import { MaterialSnackModule } from './snack-bar.module';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Injectable(
     ({ providedIn: MaterialSnackModule })
@@ -30,21 +31,37 @@ export class SnackbarService implements OnDestroy {
     //         .subscribe(windowSize$);
     // }
 
-    constructor(public snackBar: MatSnackBar) {
-        console.log(window.innerWidth)
-        if (window.innerWidth < 768) {
-            this.horizontalPosition = 'center';
-            this.verticalPosition = 'bottom';
-        }
-        this.subscription = fromEvent(window, 'resize').subscribe(() => {
-            if (window.innerWidth < 768) {
+    constructor(public snackBar: MatSnackBar, private breakpointObserver: BreakpointObserver) {
+        // console.log(window.innerWidth)
+        // const isSmallScreen = breakpointObserver.isMatched('(max-width: 768px)');
+        // if (isSmallScreen) {
+        //     this.horizontalPosition = 'center';
+        //     this.verticalPosition = 'bottom';
+        // }
+        const subscription = this.breakpointObserver.observe('(max-width: 768px)').subscribe(result => {
+            if (result.matches) {
                 this.horizontalPosition = 'center';
                 this.verticalPosition = 'bottom';
             } else {
                 this.horizontalPosition = 'right';
                 this.verticalPosition = 'top';
             }
+            console.log(`{portrait: ${result.matches}`);
         });
+
+        // if (window.innerWidth < 768) {
+        //     this.horizontalPosition = 'center';
+        //     this.verticalPosition = 'bottom';
+        // }
+        // this.subscription = fromEvent(window, 'resize').subscribe(() => {
+        //     if (window.innerWidth < 768) {
+        //         this.horizontalPosition = 'center';
+        //         this.verticalPosition = 'bottom';
+        //     } else {
+        //         this.horizontalPosition = 'right';
+        //         this.verticalPosition = 'top';
+        //     }
+        // });
 
     }
     ngOnDestroy(): void {
