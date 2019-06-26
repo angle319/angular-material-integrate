@@ -9,7 +9,7 @@ export interface BarWidget {
     route_url?: string;
     icon?: string;
     text?: string;
-    tooltip: string;
+    tooltip?: string;
     _child?: MenuElement[];
 }
 

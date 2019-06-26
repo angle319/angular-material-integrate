@@ -15,12 +15,12 @@ export class SidebarComponent implements OnDestroy, OnInit {
         topGap: 0,
         bottomGap: 0
     }
-    // @ViewChild('sidenav') sidenav: MatSidenav
+    @ViewChild('sidenav') sidenav: MatSidenav
     @Input() sidebar?: MenuElement[];
     @Input() topGap = 0;
     @Input() bottomGap = 0;
     @Input() xsAutoFill = false;
-    @Input() panelWidth = 300;
+    @Input() panelWidth = 240;
     @Input() position = 'start';
     @Input() sidebarTemplate: TemplateRef<any> = null;
     @Input() containerTemplate: TemplateRef<any> = null;
@@ -44,7 +44,8 @@ export class SidebarComponent implements OnDestroy, OnInit {
         this.mobileQuery.removeListener(this.mobileQueryListener);
     }
     toggle() {
-        // this.sidenav.toggle()
+        console.log(`----------`)
+        this.sidenav.toggle()
     }
 }
 

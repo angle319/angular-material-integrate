@@ -67,6 +67,18 @@ export class SnackbarService implements OnDestroy {
     ngOnDestroy(): void {
         this.subscription.unsubscribe()
     }
+    open(title = '', message = '') {
+        this.snackBar.openFromComponent(SnackbarComponent, {
+            ...this._buildConfig('snack-panel-default'),
+            data: { title, message },
+        });
+    }
+    openInfo(message = '') {
+        this.snackBar.openFromComponent(SnackbarComponent, {
+            ...this._buildConfig('snack-panel-info'),
+            data: { title: 'Information', message },
+        });
+    }
     openSuccess(message = '') {
         this.snackBar.openFromComponent(SnackbarComponent, {
             ...this._buildConfig('snack-panel-success'),

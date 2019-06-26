@@ -159,13 +159,46 @@
       </mat-nav-list>
     </mat-sidenav>
   <mat-sidenav-content> -->
-<mvb-tool-bar></mvb-tool-bar>
-<mvb-side-bar [sidebar]="sidebar" [sidebarTemplate]="sidebarTemplate" [containerTemplate]="myTemplate"></mvb-side-bar>
+<mvb-tool-bar [barWidget]="widget" (onToggle)="_sidebar.toggle()"></mvb-tool-bar>
+<mvb-side-bar #_sidebar [sidebar]="sidebar" [sidebarTemplate]="sidebarTemplate" [containerTemplate]="myTemplate">
+</mvb-side-bar>
 <ng-template #myTemplate>
   <p>this is my style</p>
   <router-outlet>
+    <div class="container mat-body-1">
+
+
+
+      <div class="content">
+        <h2>Dialog</h2>
+        <h2>Button</h2>
+        <h2>Toast</h2>
+        <button mat-raised-button (click)="onClickToast()" >Success</button>
+        <button mat-raised-button (click)="onClickToast('warning')">Warning</button>
+        <button mat-raised-button (click)="onClickToast('error')">Error</button>
+        <h2>Table</h2>
+        <mvb-list (onRowSelect)="click_test($event)" [total]="20" [columnHeaders]="displayedColumns"
+          [dataSource]="dataSource" class="w-100" (onLazyLoad)="changeAPI($event)" [isMultiSelect]="true">
+          <ng-template mvbCol let-input cell="1" styleClass="a-col">
+            <div style="color:wheat;width:50% ;">{{input}}</div>
+
+          </ng-template>
+          <ng-template mvbCol let-input cell="2">
+            <button>
+              <fa-icon icon="edit"></fa-icon>{{input}}
+            </button>
+
+          </ng-template>
+          <ng-template mvbCol let-input cell="4">
+            <div style="color:aqua ;width:50% ;">{{input|date: 'yyyy-MM-dd HH:mm:ss'}}</div>
+
+          </ng-template>
+        </mvb-list>
+      </div>
+
+    </div>
   </router-outlet>
 </ng-template>
 <ng-template #sidebarTemplate>
-    <p>this is my sidebar</p>
+  <p>this is my sidebar</p>
 </ng-template>

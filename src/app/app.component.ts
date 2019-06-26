@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   dataSource = [{ a: 'abc', b: '45545', c: '12d34', time: new Date() },
   { a: 'abc', b: '45545', c: '1234', time: new Date() }];
   title = 'myviewboard';
-  message;
+  message = 'somethings happened';
 
   sidebar = [{
     text: 'test',
@@ -22,11 +22,45 @@ export class AppComponent implements OnInit {
       text: 'test',
     }]
   }]
+  widget = [
+    {
+      route_url: '#/',
+      text: 'Component',
+      tooltip: 'test'
+    },
+    {
+      route_url: '#/',
+      icon: 'apps',
+      text: 'About',
+      tooltip: 'test'
+    },
+    {
+      route_url: '#/',
+      icon: 'notifications',
+      tooltip: 'test'
+    },
+    {
+      icon: 'account_circle',
+      tooltip: '',
+      _child: [
+        {
+          route_url: '#/',
+          icon: 'help',
+          text: '1234'
+        },
+        {
+          divide: true,
+          click: this.onClickLogout,
+          icon: 'exit_to_app',
+          text: 'logout',
+        }
+      ]
+    }
+  ]
   constructor(public snackbarService: SnackbarService) {
 
   }
   ngOnInit() {
-
   }
   click_test(row) {
     console.log(`select:`, row)
@@ -51,6 +85,11 @@ export class AppComponent implements OnInit {
       default:
         break;
     }
-
+  }
+  onClickLogout(event){
+    console.log(event)
+  }
+  onToggle(event){
+    console.log(event)
   }
 }

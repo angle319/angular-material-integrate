@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component, OnDestroy, Input, ViewChild, OnInit, Output, TemplateRef, EventEmitter } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { MatSidenav } from '@angular/material';
 import { BarWidget } from '../common/menu'
 
 
@@ -11,9 +10,13 @@ import { BarWidget } from '../common/menu'
     //styleUrls: ['./sidebar.component.css']
 })
 export class ToolBarComponent implements OnDestroy, OnInit {
+    @Input() title = '';
     @Input() isMenu = true;
-    @Input() barWidget: BarWidget[]
+    @Input() barWidget: BarWidget[];
     @Output() onToggle: EventEmitter<any> = new EventEmitter();
+    @Input() titleContainerTemplate: TemplateRef<any> = null;
+    @Input() settingContainerTemplate: TemplateRef<any> = null;
+    @Input() extendsContainerTemplate: TemplateRef<any> = null;
     mobileQuery: MediaQueryList;
     mobileQueryListener: () => void;
     constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {

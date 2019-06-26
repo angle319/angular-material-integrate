@@ -2,23 +2,41 @@
   <button *ngIf="isMenu" mat-icon-button matTooltip="Menu" (click)="clickMenu($event)">
     <mat-icon>settings</mat-icon>
   </button>
-  <div style="flex: 1 1 auto;">Account Settings</div>
-  <div>
-    <ng-container>
-        
+  <div style="flex: 1 1 auto;">
+    <ng-container *ngTemplateOutlet="titleContainerTemplate ? titleContainerTemplate: defaultTitleContainerTemplate">
     </ng-container>
-      
-    <button mat-icon-button matTooltip="Switch Apps">
-      <span><mat-icon>apps</mat-icon></span>
+  </div>
+  <div>
+    <ng-container
+      *ngTemplateOutlet="settingContainerTemplate ? settingContainerTemplate: defaultSettingContainerTemplate">
+    </ng-container>
+  </div>
+</mat-toolbar>
+<ng-template #defaultTitleContainerTemplate>
+  {{title}}
+</ng-template>
+
+<ng-template #defaultSettingContainerTemplate>
+  <ng-container
+    *ngTemplateOutlet="extendsContainerTemplate ? extendsContainerTemplate: null">
+  </ng-container>
+  <ng-container *ngFor="let item of barWidget">
+    <button *ngIf="item.text" mat-button [matTooltip]="item.tooltip" [matMenuTriggerFor]="menu"
+      routerLink="{{item.route_url}}" (click)="(item.click)?item.click($event):null">
+      <mat-icon *ngIf="item.icon">{{item.icon}}</mat-icon>{{item.text}}
     </button>
-    <button mat-icon-button matTooltip="Notifications">
-      <mat-icon>notifications</mat-icon>
+    <button *ngIf="!item.text" mat-icon-button [matTooltip]="item.tooltip" [matMenuTriggerFor]="menu"
+      routerLink="{{item.route_url}}" (click)="(item.click)?item.click($event):null">
+      <mat-icon>{{item.icon}}</mat-icon>
     </button>
-    <button mat-icon-button matTooltip="My Account" [matMenuTriggerFor]="accountMenu">
-      <mat-icon>account_circle</mat-icon>
-    </button>
-    <mat-menu #accountMenu [overlapTrigger]="false" yPosition="below">
-      <button mat-menu-item routerLink="#">
+    <mat-menu #menu="matMenu" [overlapTrigger]="false" yPosition="below">
+      <ng-container *ngFor="let menu of item._child">
+        <button mat-menu-item routerLink="{{menu.route_url}}" (click)="(menu.click)?menu.click($event):null">
+          <mat-divider *ngIf="menu.divide"></mat-divider>
+          <mat-icon>{{menu.icon}}</mat-icon><span>{{menu.text}}</span>
+        </button>
+      </ng-container>
+      <!-- <button mat-menu-item routerLink="#">
         <mat-icon>person</mat-icon><span>My Account</span>
       </button>
       <button mat-menu-item>
@@ -27,7 +45,13 @@
       <mat-divider></mat-divider>
       <button mat-menu-item>
         <mat-icon>exit_to_app</mat-icon>Logout
-      </button>
+      </button> -->
     </mat-menu>
-  </div>
-</mat-toolbar>
+  </ng-container>
+
+
+  <!-- <button mat-icon-button matTooltip="My Account" [matMenuTriggerFor]="accountMenu">
+    <mat-icon></mat-icon>
+  </button> -->
+
+</ng-template>

@@ -9,6 +9,12 @@
 ::ng-deep .snack-panel-error {
   background-color: #e91224;
 }
+::ng-deep .snack-panel-default {
+}
+
+::ng-deep .snack-panel-info {
+  background-color: #6c757d;
+}
 
 
 
