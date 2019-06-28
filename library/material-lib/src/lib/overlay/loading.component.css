@@ -1,0 +1,6 @@
+.mvb-load-panel {
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity .4s cubic-bezier(.25,.4,.25,1);
+    opacity: .4;
+    background: rgba(0,0,0,.32);
+}

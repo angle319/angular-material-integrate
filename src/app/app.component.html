@@ -159,21 +159,25 @@
       </mat-nav-list>
     </mat-sidenav>
   <mat-sidenav-content> -->
-<mvb-tool-bar [barWidget]="widget" (onToggle)="_sidebar.toggle()"></mvb-tool-bar>
-<mvb-side-bar #_sidebar [sidebar]="sidebar" [sidebarTemplate]="sidebarTemplate" [containerTemplate]="myTemplate">
+      
+
+<mvb-tool-bar [barWidget]="widget" (onToggle)="_sidebar.toggle()" [isSticky]="true"></mvb-tool-bar>
+<mvb-side-bar #_sidebar [sidebar]="sidebar" [containerTemplate]="myTemplate" [topGap]="60">
+  <!--[sidebarTemplate]="sidebarTemplate"-->
 </mvb-side-bar>
 <ng-template #myTemplate>
+  <mvb-tool-bar [barWidget]="widget" (onToggle)="_sidebar.toggle()"></mvb-tool-bar>
   <p>this is my style</p>
   <router-outlet>
-    <div class="container mat-body-1">
-
-
-
+    
+    <!-- <div class="container mat-body-1">
       <div class="content">
+        <h2>Overlay</h2>
+        <button mat-raised-button (click)="onLoading()">Loading 5 sec</button>
         <h2>Dialog</h2>
         <h2>Button</h2>
         <h2>Toast</h2>
-        <button mat-raised-button (click)="onClickToast()" >Success</button>
+        <button mat-raised-button (click)="onClickToast()">Success</button>
         <button mat-raised-button (click)="onClickToast('warning')">Warning</button>
         <button mat-raised-button (click)="onClickToast('error')">Error</button>
         <h2>Table</h2>
@@ -196,7 +200,7 @@
         </mvb-list>
       </div>
 
-    </div>
+    </div> -->
   </router-outlet>
 </ng-template>
 <ng-template #sidebarTemplate>

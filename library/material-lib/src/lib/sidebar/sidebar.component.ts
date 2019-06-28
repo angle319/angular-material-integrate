@@ -39,6 +39,7 @@ export class SidebarComponent implements OnDestroy, OnInit {
             topGap: this.topGap,
             bottomGap: this.bottomGap
         }
+        console.log(this.options)
     }
     ngOnDestroy(): void {
         this.mobileQuery.removeListener(this.mobileQueryListener);

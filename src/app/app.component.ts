@@ -16,11 +16,18 @@ export class AppComponent implements OnInit {
   message = 'somethings happened';
 
   sidebar = [{
-    text: 'test',
+    text: 'component',
     _child: [{
-      route_url: '1234',
-      text: 'test',
-    }]
+      route_url: 'toast',
+      text: 'route',
+    }, {
+      route_url: 'overlay',
+      text: 'overlay',
+    }],
+  },
+  {
+    text: 'help',
+    route_url: 'help',
   }]
   widget = [
     {
@@ -86,10 +93,10 @@ export class AppComponent implements OnInit {
         break;
     }
   }
-  onClickLogout(event){
+  onClickLogout(event) {
     console.log(event)
   }
-  onToggle(event){
+  onToggle(event) {
     console.log(event)
   }
 }

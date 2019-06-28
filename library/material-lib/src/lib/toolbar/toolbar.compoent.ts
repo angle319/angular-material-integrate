@@ -7,11 +7,12 @@ import { BarWidget } from '../common/menu'
     selector: 'mvb-tool-bar',
     templateUrl: './toolbar.component.html',
     // template: ``,
-    //styleUrls: ['./sidebar.component.css']
+    styleUrls: ['./toolbar.component.css']
 })
 export class ToolBarComponent implements OnDestroy, OnInit {
     @Input() title = '';
     @Input() isMenu = true;
+    @Input() isSticky = false;
     @Input() barWidget: BarWidget[];
     @Output() onToggle: EventEmitter<any> = new EventEmitter();
     @Input() titleContainerTemplate: TemplateRef<any> = null;

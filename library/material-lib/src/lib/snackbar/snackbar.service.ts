@@ -18,26 +18,7 @@ export class SnackbarService implements OnDestroy {
     horizontalPosition: MatSnackBarHorizontalPosition = 'right';
     verticalPosition: MatSnackBarVerticalPosition = 'top';
     subscription: Subscription;
-    // height$: Observable<number>;
-    // //create more Observables as and when needed for various properties
-    // hello: string = "Hello";
-    // constructor() {
-    //     let windowSize$ = new BehaviorSubject(getWindowSize());
-
-    //     this.height$ = (windowSize$.pluck('height') as Observable<number>).distinctUntilChanged();
-
-    //     Observable.fromEvent(window, 'resize')
-    //         .map(getWindowSize)
-    //         .subscribe(windowSize$);
-    // }
-
     constructor(public snackBar: MatSnackBar, private breakpointObserver: BreakpointObserver) {
-        // console.log(window.innerWidth)
-        // const isSmallScreen = breakpointObserver.isMatched('(max-width: 768px)');
-        // if (isSmallScreen) {
-        //     this.horizontalPosition = 'center';
-        //     this.verticalPosition = 'bottom';
-        // }
         const subscription = this.breakpointObserver.observe('(max-width: 768px)').subscribe(result => {
             if (result.matches) {
                 this.horizontalPosition = 'center';
@@ -48,21 +29,6 @@ export class SnackbarService implements OnDestroy {
             }
             console.log(`{portrait: ${result.matches}`);
         });
-
-        // if (window.innerWidth < 768) {
-        //     this.horizontalPosition = 'center';
-        //     this.verticalPosition = 'bottom';
-        // }
-        // this.subscription = fromEvent(window, 'resize').subscribe(() => {
-        //     if (window.innerWidth < 768) {
-        //         this.horizontalPosition = 'center';
-        //         this.verticalPosition = 'bottom';
-        //     } else {
-        //         this.horizontalPosition = 'right';
-        //         this.verticalPosition = 'top';
-        //     }
-        // });
-
     }
     ngOnDestroy(): void {
         this.subscription.unsubscribe()
@@ -116,12 +82,3 @@ export class SnackbarService implements OnDestroy {
         return config
     }
 }
-
-
-
-// function getWindowSize() {
-//     return {
-//         height: window.innerHeight
-//         //you can sense other parameters here
-//     };
-// };

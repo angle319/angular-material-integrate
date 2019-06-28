@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar [ngClass]="{'sticky-top': isSticky}">
   <button *ngIf="isMenu" mat-icon-button matTooltip="Menu" (click)="clickMenu($event)">
     <mat-icon>settings</mat-icon>
   </button>

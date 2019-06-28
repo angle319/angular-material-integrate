@@ -5,7 +5,7 @@ import {
 import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
-    selector: 'mvb-snack-success',
+    selector: 'mvb-snack-bar',
     template: `
     <div *ngIf="!mobileQuery.matches" class="toast-header">
       <strong class="snack-title">{{title}}</strong>
