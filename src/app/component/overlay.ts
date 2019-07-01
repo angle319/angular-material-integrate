@@ -4,8 +4,8 @@ import { LoadingService } from 'library/material-lib/src/public-api';
     selector: 'app-overlays',
     template: `<h2>Loading Overlay</h2>
   <button mat-raised-button (click)="onLoading()">Loading 5 sec</button>
-  <div mvbLoading [loading]="isload">
-    <div style="height:50px;">dassdaasda</div>
+  <div mvbLoading [size]="30" [loading]="isload" style="width:30%;">
+    <div style="height:200px;">dassdaasda</div>
   </div>
 `,
     providers: [LoadingService]
