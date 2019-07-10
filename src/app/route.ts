@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ToastComponent, OverlayComponent } from './component'
+import { ToastComponent, OverlayComponent, SimplePageComponent,TableComponent } from './component'
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import {
     MaterialTableModule, MaterialSnackModule, MaterialSidebarModule,
-    MaterialToolBarModule, MaterialOverlayModule
-  } from 'library/material-lib/src/public-api';
+    MaterialToolBarModule, MaterialOverlayModule, MaterialSimplePageModule
+} from 'library/material-lib/src/public-api';
 const routes: Routes = [
     {
         path: 'toast',
@@ -14,18 +14,25 @@ const routes: Routes = [
     {
         path: 'overlay',
         component: OverlayComponent
+    }, {
+        path: 'simple_path',
+        component: SimplePageComponent
+    },{
+        path: 'table',
+        component: TableComponent
     }
 ];
 
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes),MaterialOverlayModule,
+    imports: [RouterModule.forRoot(routes), MaterialOverlayModule,
         MaterialTableModule,
         MaterialSnackModule,
         MaterialSidebarModule,
-        MaterialToolBarModule,],
+        MaterialToolBarModule,
+        MaterialSimplePageModule],
     exports: [RouterModule],
-    declarations: [ToastComponent, OverlayComponent],
+    declarations: [ToastComponent, OverlayComponent, SimplePageComponent, TableComponent],
     providers: [
         {
             provide: LocationStrategy, useClass: PathLocationStrategy

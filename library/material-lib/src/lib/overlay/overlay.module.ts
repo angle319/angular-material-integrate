@@ -7,7 +7,7 @@ import { MaterialModule } from '../shared/material.module';
 import { SpinnerComponent } from './loading.component';
 
 @NgModule({
-    declarations: [LoadingDirective,SpinnerComponent],
+    declarations: [LoadingDirective, SpinnerComponent],
     imports: [
         BrowserModule, BrowserAnimationsModule, MaterialModule
     ],

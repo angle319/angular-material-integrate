@@ -1,0 +1,38 @@
+<mat-card class="login-card" [class.mat-elevation-z8]="true" [@fadeZoom]>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <form class="login-form" cdkTrapFocus [formGroup]="loginForm">
+      <table class="w-100" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="w-100" appearance="standard">
+              <mat-label>Username/Email</mat-label>
+              <input matInput placeholder="Username" mvbFocus cdkFocusInitial cdkFocusRegionStart
+                formControlName="username" name="username" required>
+              <mat-icon matSuffix>perm_identity</mat-icon>
+              <mat-error>Username is not correct</mat-error>
+            </mat-form-field>
+
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="w-100" appearance="standard">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Password" cdkFocusRegionEnd formControlName="password" type="password"
+                name="password" required>
+              <mat-icon matSuffix>lock</mat-icon>
+              <mat-error>Password is not correct</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+  </mat-card-content>
+  <mat-card-actions class="login-action ">
+    <button mat-button (click)="forgetPWD(loginForm)" color="primary">forget password?</button>
+    <button mat-raised-button (click)="confirm(loginForm.value)" color="primary"
+      [disabled]="!loginForm.valid">Login</button>
+  </mat-card-actions>
+</mat-card>

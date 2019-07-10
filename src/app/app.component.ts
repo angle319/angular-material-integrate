@@ -8,10 +8,6 @@ import { SnackbarService } from 'library/material-lib/src/public-api';
   providers: [SnackbarService]
 })
 export class AppComponent implements OnInit {
-  list = ['a', 'b', 'c', 'time']
-  displayedColumns = ['a', 'b', 'c', 'time']
-  dataSource = [{ a: 'abc', b: '45545', c: '12d34', time: new Date() },
-  { a: 'abc', b: '45545', c: '1234', time: new Date() }];
   title = 'myviewboard';
   message = 'somethings happened';
 
@@ -23,8 +19,15 @@ export class AppComponent implements OnInit {
     }, {
       route_url: 'overlay',
       text: 'overlay',
+    }, {
+      route_url: 'simple_path',
+      text: 'simple page',
+    }, {
+      route_url: 'table',
+      text: 'table',
     }],
   },
+
   {
     text: 'help',
     route_url: 'help',
@@ -69,12 +72,7 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
   }
-  click_test(row) {
-    console.log(`select:`, row)
-  }
-  changeAPI(event) {
-    console.log(event)
-  }
+  
   onClickToast(success = 'success') {
     switch (success) {
       case 'success':

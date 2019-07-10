@@ -98,7 +98,6 @@ export class TableComponent implements OnInit, AfterContentInit {
     }
     this.onRowSelect.emit([row]);
 
-    console.log(this.onRowSelect);
     console.log(`component-row-select:`, row);
   }
   ngAfterContentInit() {

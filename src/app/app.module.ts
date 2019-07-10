@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {
   MaterialTableModule, MaterialSnackModule, MaterialSidebarModule,
-  MaterialToolBarModule, MaterialOverlayModule
+  MaterialToolBarModule, MaterialOverlayModule, MaterialSimplePageModule
 } from 'library/material-lib/src/public-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteModule } from './route';
@@ -23,6 +23,7 @@ import { RouteModule } from './route';
     MaterialSnackModule,
     MaterialSidebarModule,
     MaterialToolBarModule,
+    MaterialSimplePageModule,
     BrowserAnimationsModule
   ],
   providers: [],

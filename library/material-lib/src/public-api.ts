@@ -5,10 +5,19 @@ export * from './lib/sidebar/side-bar.module';
 export * from './lib/snackbar/snackbar.service';
 export * from './lib/snackbar/snack-bar.module';
 export * from './lib/toolbar/toolbar.module';
-export * from './lib/table/material-table.module';
+export * from './lib/table/table.module';
 export * from './lib/overlay/loading.service';
 export * from './lib/overlay/overlay.module';
+export * from './lib/page/page.module';
 
+
+
+
+
+
+
+
+// this is implement animations
 export * from './lib/animations/attention-seekers';
 export * from './lib/animations/bouncing';
 export * from './lib/animations/fading';

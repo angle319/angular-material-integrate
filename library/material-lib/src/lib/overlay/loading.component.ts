@@ -6,14 +6,14 @@ import { fadeIn, fadeOut, fadeInX, fadeOutX } from '../animations/fading'
 
 @Component({
     selector: 'mvb-loading',
-    template: `<div *ngIf="isVisible" class="mvb-load-panel" [@modalFadeZoom] [style.height.px]="height" [style.line-height.px]="height"
+    template: `<div *ngIf="isVisible" class="mvb-load-panel" [@fadeZoom] [style.height.px]="height" [style.line-height.px]="height"
     style="text-align: center;">
     <mat-spinner [diameter]="diameter" mode="indeterminate" style="margin:0 auto;display:inline-block;"></mat-spinner>
     </div>`,
     styleUrls: ['./loading.component.css'],
     animations: [
         trigger(
-            'modalFadeZoom',
+            'fadeZoom',
             [
                 transition(
                     ':enter', fadeInX(0, 0, 0.5)
