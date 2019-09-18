@@ -28,7 +28,7 @@ export class SpinnerComponent implements OnDestroy, OnInit {
     @Input() height;
     @Input() diameter
     @Input() isVisible = true
-    constructor(public _elementRef: ElementRef) {
+    constructor(public elementRef: ElementRef) {
 
     }
     ngOnDestroy(): void {

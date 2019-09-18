@@ -9,12 +9,12 @@ import { FocusElDirective } from '../common/focus.directive';
 @NgModule({
     declarations: [LoginPageComponent, FocusElDirective],
     imports: [
-        MaterialModule, FormsModule, ReactiveFormsModule, 
+        MaterialModule, FormsModule, ReactiveFormsModule,
         BrowserModule, BrowserAnimationsModule, FontAwesomeCommonModule,
     ],
     exports: [
         MaterialModule,
-        BrowserAnimationsModule, FontAwesomeCommonModule, 
+        BrowserAnimationsModule, FontAwesomeCommonModule,
         LoginPageComponent]
 })
 export class MaterialSimplePageModule { }
