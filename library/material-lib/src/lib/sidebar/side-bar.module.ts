@@ -1,7 +1,6 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './sidebar.component';
 import { MaterialModule } from '../shared/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,12 +13,12 @@ const routes: Routes = [];
   declarations: [SidebarComponent],
   imports: [
     MaterialModule, FormsModule, ReactiveFormsModule,
-    CommonModule, BrowserAnimationsModule, FontAwesomeCommonModule,
+    CommonModule, FontAwesomeCommonModule,
     RouterModule.forRoot(routes)
   ],
   exports: [
     MaterialModule,
-    BrowserAnimationsModule, FontAwesomeCommonModule,
+    FontAwesomeCommonModule,
     SidebarComponent]
 })
 export class MaterialSidebarModule { }
