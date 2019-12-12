@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingDirective } from './loading.directive'
 import { MatSpinner } from '@angular/material';
@@ -9,7 +9,7 @@ import { SpinnerComponent } from './loading.component';
 @NgModule({
     declarations: [LoadingDirective, SpinnerComponent],
     imports: [
-        BrowserModule, BrowserAnimationsModule, MaterialModule
+        CommonModule, BrowserAnimationsModule, MaterialModule
     ],
     exports: [
         BrowserAnimationsModule, LoadingDirective, MaterialModule

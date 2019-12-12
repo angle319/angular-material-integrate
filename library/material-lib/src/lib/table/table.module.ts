@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableComponent, PrimeTemplate } from './table.component';
 import { MaterialModule } from '../shared/material.module';
@@ -9,7 +9,7 @@ import { FontAwesomeCommonModule } from '../shared/fontawesome.module';
   declarations: [TableComponent, PrimeTemplate],
   imports: [
     MaterialModule, FormsModule, ReactiveFormsModule,
-    BrowserModule, BrowserAnimationsModule, FontAwesomeCommonModule,
+    CommonModule, BrowserAnimationsModule, FontAwesomeCommonModule,
   ],
   exports: [
     MaterialModule,

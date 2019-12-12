@@ -1,6 +1,6 @@
 
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolBarComponent } from './toolbar.compoent';
 import { MaterialModule } from '../shared/material.module';
@@ -14,7 +14,7 @@ const routes: Routes = [];
   declarations: [ToolBarComponent],
   imports: [
     MaterialModule, FormsModule, ReactiveFormsModule,
-    BrowserModule, BrowserAnimationsModule, FontAwesomeCommonModule,
+    CommonModule, BrowserAnimationsModule, FontAwesomeCommonModule,
     RouterModule.forRoot(routes)
   ],
   exports: [
