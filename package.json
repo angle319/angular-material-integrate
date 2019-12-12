@@ -1,9 +1,9 @@
 {
   "name": "myviewboard",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4201",
     "build": "ng build",
     "build-lib": "ng build material-lib",
     "test": "ng test",

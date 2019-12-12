@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule, MatButtonModule } from '@angular/material';
 import { SnackbarComponent } from './snackbar.component';
@@ -9,7 +9,7 @@ import { SnackbarComponent } from './snackbar.component';
     imports: [
         MatSnackBarModule,
         MatButtonModule,
-        BrowserModule, BrowserAnimationsModule,
+        CommonModule, BrowserAnimationsModule,
     ],
     exports: [
         BrowserAnimationsModule,
