@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {
   MaterialTableModule, MaterialSnackModule, MaterialSidebarModule,
   MaterialToolBarModule, MaterialOverlayModule, MaterialSimplePageModule
+//}  from 'material-lib';
 } from 'library/material-lib/src/public-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteModule } from './route';

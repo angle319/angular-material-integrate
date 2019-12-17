@@ -32,7 +32,7 @@
 
     <ng-container *ngIf="key!=='_select'&&key!=='_editor'">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>
-        {{key}}
+        {{(displayHeaders)? displayHeaders[_index]:key}}
       </th>
       <td mat-cell *matCellDef="let element">
         <div *ngIf="!cellTemplate[_index + cell_index].template">{{element[key]}}</div>
@@ -48,6 +48,6 @@
   </tr>
 
 </table>
-<mat-paginator [length]="total" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="changePage($event)"
+<mat-paginator [length]="total" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [pageIndex]="pageIndex" (page)="changePage($event)"
   showFirstLastButtons class="scroll-auto-paginator mat-elevation-z8">
 </mat-paginator>

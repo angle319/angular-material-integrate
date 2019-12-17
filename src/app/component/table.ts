@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-toast',
     template: `<h2>Table</h2>
-  <mvb-list (onRowSelect)="click_test($event)" [total]="20" [columnHeaders]="displayedColumns"
+  <mvb-list (onRowSelect)="click_test($event)" [total]="20" [columnHeaders]="keysColumns"
+    [pageIndex]="1"  [displayHeaders] ="displayedColumns"
       [dataSource]="dataSource" class="w-100" (onLazyLoad)="changeAPI($event)"  [isEdit]="true">
       <ng-template mvbCol let-input cell="1" styleClass="a-col">
         <div style="color:wheat;width:50% ;">{{input}}</div>
@@ -23,8 +24,8 @@ import { Component, OnInit } from '@angular/core';
     event is {{event_row|json}}`
 })
 export class TableComponent implements OnInit {
-    list = ['a', 'b', 'c', 'time']
-    displayedColumns = ['a', 'b', 'c', 'time']
+    displayedColumns = ['Name', 'Test', 'PP', 'time']
+    keysColumns = ['a', 'b', 'c', 'time']
     dataSource = [{ a: 'abc', b: '45545', c: '12d34', time: new Date() },
     { a: 'abc', b: '45545', c: '1234', time: new Date() }];
     event_row = {}

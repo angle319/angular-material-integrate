@@ -5,7 +5,7 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import {
     MaterialTableModule, MaterialSnackModule, MaterialSidebarModule,
     MaterialToolBarModule, MaterialOverlayModule, MaterialSimplePageModule
-} from 'library/material-lib/src/public-api';
+}  from 'library/material-lib/src/public-api';
 const routes: Routes = [
     {
         path: 'toast',

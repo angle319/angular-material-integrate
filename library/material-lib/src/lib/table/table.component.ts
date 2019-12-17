@@ -32,24 +32,18 @@ export class TableComponent implements OnInit, AfterContentInit {
   mode_multi = 2;
   cell_index = 1;
   cellTemplate = {};
-  pageSize = 10;
-  pageSizeOptions: number[] = [5, 10, 25];
-  tableEvent = {
-    first: 0,
-    rows: this.pageSizeOptions[0],
-    sortField: undefined,
-    sortOrder: undefined,
-    filters: undefined,
-    globalFilter: '',
-  };
   icon_edit = true;
   icon_del = true;
   select_mode;
   filterInputControl = new FormControl();
   @Input() dataSource: any[] = [];
   @Input() columnHeaders: any[] = [];
+  @Input() displayHeaders: any;
   @Input() editParams = ['edit', 'del'];
   @Input() total = 0;
+  @Input() pageSize = 10;
+  @Input() pageIndex = 0;
+  @Input() pageSizeOptions: number[] = [ 1,  5, 10, 25];
   @Input() isRipple = true;
   @Input() isMultiSelect = false;
   @Input() isFilter = false;
@@ -59,12 +53,19 @@ export class TableComponent implements OnInit, AfterContentInit {
   @Output() onCreate: EventEmitter<any> = new EventEmitter();
   @Output() onEdit: EventEmitter<any> = new EventEmitter();
   @Output() onDelete: EventEmitter<any> = new EventEmitter();
+  tableEvent = {
+    first: 0,
+    rows: this.pageSizeOptions[0],
+    sortField: undefined,
+    sortOrder: undefined,
+    filters: undefined,
+    globalFilter: '',
+  };
   @ContentChildren(PrimeTemplate) templates: QueryList<PrimeTemplate>;
   constructor() {
     if (this.isMultiSelect) {
       this.cell_index = 0;
     }
-
     // this.dataSource = [{ position: '1234', filename: '45545', filesize: '1234' }]
   }
 
@@ -109,8 +110,18 @@ export class TableComponent implements OnInit, AfterContentInit {
         if (this.isEdit) { x[key_editor] = true; }
         return x;
       });
-      if (this.isMultiSelect) { this.columnHeaders.unshift(key_mutli); }
-      if (this.isEdit) { this.columnHeaders.push(key_editor); }
+      if (this.isMultiSelect) {
+        this.columnHeaders.unshift(key_mutli);
+        if(Array.isArray(this.displayHeaders)) {
+          this.displayHeaders.unshift(key_mutli)
+        }
+      }
+      if (this.isEdit) {
+        this.columnHeaders.push(key_editor);
+        if(Array.isArray(this.displayHeaders)) {
+          this.displayHeaders.push(key_editor)
+        }
+      }
     }
     if (this.columnHeaders) {
       this.columnHeaders.map((header, index) => {
