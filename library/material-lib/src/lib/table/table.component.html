@@ -37,7 +37,7 @@
       <td mat-cell *matCellDef="let element">
         <div *ngIf="!cellTemplate[_index + cell_index].template">{{element[key]}}</div>
         <ng-container
-          *ngTemplateOutlet="cellTemplate[_index + cell_index].template; context {$implicit: element[key],key: key}">
+          *ngTemplateOutlet="cellTemplate[_index + cell_index].template; context {$implicit: element[key],key: key, row:element}">
         </ng-container>
       </td>
     </ng-container>
