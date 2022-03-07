@@ -1,0 +1,19 @@
+<h2>Table</h2>
+<mvb-list (onRowSelect)="click_test($event)" [total]="6" [columnHeaders]="keysColumns" [pageIndex]="0" [pageSize]="5"
+  [displayHeaders]="displayedColumns" [dataSource]="dataSource" class="w-100" (onLazyLoad)="fetch($event)"
+  [isEdit]="true" [isMultiSelect]="true" [isSort]="true" [isFilter]="true" [maxHeight]="maxHeight"
+  [maxWidth]="maxWidth" [isStickyHeader]="true">
+  <ng-template mvbCol let-input cell="2" styleClass="a-col">
+    <div style="color:wheat;width:50% ;">{{input}}</div>
+  </ng-template>
+  <ng-template mvbCol let-input cell="3">
+    <button>
+      <fa-icon icon="edit"></fa-icon>{{input}}
+    </button>
+
+  </ng-template>
+  <ng-template mvbCol let-input cell="5">
+    <div style="color:aqua ;width:50% ;">{{input|date: 'yyyy-MM-dd HH:mm:ss'}}</div>
+  </ng-template>
+</mvb-list>
+event is {{event_row|json}}

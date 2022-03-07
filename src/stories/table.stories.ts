@@ -1,10 +1,11 @@
 import { storiesOf } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, number, boolean, array, select, radios, color, date, button, object, options } from '@storybook/addon-knobs';
+import { withKnobs, text, number, boolean, array, select, radios, color, date, button, object } from '@storybook/addon-knobs';
 import { MaterialTableModule } from 'library/material-lib/src/public-api';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableComponent } from 'library/material-lib/src/lib/table/table.component';
+import { ArrayTypeKnobValue } from '@storybook/addon-knobs/dist/components/types/Array';
 storiesOf('Table', module)
   .addDecorator(withKnobs).addParameters({
     backgrounds: [
@@ -35,7 +36,7 @@ storiesOf('Table', module)
       </mvb-list>
       `,
       props: {
-        dataSource: array('dataSource', [{ a: 'abc', b: '45545', c: '1234', time: new Date() },
+        dataSource: object('dataSource', =[{ a: 'abc', b: '45545', c: '1234', time: new Date() },
         { a: 'abc', b: '45545', c: '1234', time: new Date() }]),
         total: number('total', 20),
         isRipple: boolean('isRipple', true),

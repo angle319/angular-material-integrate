@@ -5,7 +5,6 @@ import {
 import { ElementRef } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
 import { TemplatePortal, ComponentPortal } from '@angular/cdk/portal';
-import { MatSpinner } from '@angular/material';
 import { AnimationBuilder } from '@angular/animations';
 import { SpinnerComponent } from './loading.component';
 
@@ -47,22 +46,22 @@ export class LoadingDirective implements AfterContentChecked {
         console.log('attach')
         console.log(this.vcRef.element.nativeElement)
         if (this.loadComponent) {
-            const _loadRef = this.loadComponent._elementRef.nativeElement
+            const _loadRef = this.loadComponent.elementRef.nativeElement
             _loadRef.style.width = clientWidth + 'px'
             _loadRef.style.height = clientHeight + 'px'
             this.loadComponent.diameter = (this._size) ? this._size : Math.min(clientWidth, clientHeight)
             this.loadComponent.isVisible = false
-            //this.loadingRef.nativeElement.style.display = 'block';
+            // this.loadingRef.nativeElement.style.display = 'block';
             return 0
         }
         const factory = this.cfResolver.resolveComponentFactory(SpinnerComponent);
         const componentRef = this.vcRef.createComponent(factory);
         const component = componentRef.injector.get(SpinnerComponent)
         this.loadComponent = component
-        const loadRef = component._elementRef.nativeElement
-        //this.renderer.addClass(this.loadingRef.nativeElement, 'mvb-load-panel' );
-        //this.loadingRef.nativeElement.style.height = clientHeight
-        //this.loadingRef.nativeElement.style.width = clientWidth
+        const loadRef = component.elementRef.nativeElement
+        // this.renderer.addClass(this.loadingRef.nativeElement, 'mvb-load-panel' );
+        // this.loadingRef.nativeElement.style.height = clientHeight
+        // this.loadingRef.nativeElement.style.width = clientWidth
         this.renderer.insertBefore(
             this.vcRef.element.nativeElement,
             loadRef,
@@ -74,7 +73,7 @@ export class LoadingDirective implements AfterContentChecked {
         const clientWidth = this.vcRef.element.nativeElement.clientWidth
         const clientHeight = this.vcRef.element.nativeElement.clientHeight
         const component = this.loadComponent
-        const loadRef = component._elementRef.nativeElement
+        const loadRef = component.elementRef.nativeElement
         component.diameter = (this._size) ? this._size : Math.min(clientWidth, clientHeight)
         component.height = clientHeight
         loadRef.style.position = 'fixed'
@@ -94,22 +93,22 @@ export class LoadingDirective implements AfterContentChecked {
         console.log(this.vcRef)
 
         if (this.loadComponent && this._is_remove) {
-            const loadRef = this.loadComponent._elementRef.nativeElement
+            const loadRef = this.loadComponent.elementRef.nativeElement
             this.renderer.removeChild(this.vcRef.element.nativeElement,
                 loadRef)
         } else if (this.loadComponent && !this._is_remove) {
             this.loadComponent.isVisible = true
-            //this.loadingRef.nativeElement.style.display = 'none';
+            // this.loadingRef.nativeElement.style.display = 'none';
         }
     }
     @HostListener('window:resize')
     public detectResize(): void {
-        const loadRef = this.loadComponent._elementRef.nativeElement
+        const loadRef = this.loadComponent.elementRef.nativeElement
         loadRef.style.width = loadRef.offsetWidth + 'px'
         console.log(loadRef.offsetWidth + 'px')
     }
     @HostListener('onload') onClick() {
-        const loadRef = this.loadComponent._elementRef.nativeElement
+        const loadRef = this.loadComponent.elementRef.nativeElement
         console.log(loadRef.offsetWidth + 'px')
     }
 }

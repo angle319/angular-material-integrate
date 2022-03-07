@@ -16,6 +16,7 @@ table {
   background-size: 100%;
   transition: background 0s;
 }
+
 .mat-form-field {
   font-size: 14px;
   width: 100%;
@@ -26,23 +27,100 @@ table {
   padding: 8px 24px 0;
 }
 
-.mat-select-row{
-   background: #eeeeee 
+.mat-table .mat-select-row {
+  background: #eeeeee
 }
-.mat-column-_select {
+
+.mat-table .mat-column-_select {
   flex: 0 0 10% !important;
   min-width: 40px !important;
 }
-.mat-column-_editor {
+
+.mat-table .mat-column-_editor {
   flex: 0 0 10% !important;
   min-width: 100px !important;
   text-align: center;
 }
-.scroll-auto-table {
+
+/* .scroll-auto-table {
   margin: 5px 7px 0px 7px;
   width: calc(100% - 14px);
 }
+
 .scroll-auto-paginator {
   margin: 0px 7px 15px 7px;
   width: calc(100% - 14px);
+} */
+
+.mat-table .mat-cell {
+  width: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .mat-table {
+    border: 0;
+    vertical-align: middle;
+    height: auto;
+  }
+
+  .mat-table caption {
+    font-size: 1em;
+  }
+  
+ /* Enable this to hide header */
+  .mat-table .mat-header-row {
+    border: 10px solid;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+ 
+  .mat-table .mat-row {
+    border-bottom: 5px solid #ddd;
+    height: auto;
+    display: block;
+  }
+  /*
+  .mat-table .mat-row:nth-child(even) {background: #CCC}
+  .mat-table .mat-row:nth-child(odd) {background: #FFF}
+  */
+  .mat-table .mat-cell {
+    border-bottom: 1px solid ;
+    display: block;
+    font-size: 1em;
+    text-align: right;
+    font-weight: bold;
+    height:30px;
+    margin-bottom: 4%;
+    padding-right: 5px;
+  }
+  .mat-table .mat-column-_editor {
+    display: flex;
+    justify-content: center;
+  }
+  .mat-table .mat-cell:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    font-weight: bold;
+    float: left;
+    text-transform: uppercase;
+    font-weight: normal;
+    
+    font-size: .85em;
+  }
+  .mat-table .mat-cell:last-child {
+    border-bottom: 0;
+  }
+  .mat-table .mat-cell:first-child {
+    margin-top: 4%;
+  }
+  .mat-table td.mat-cell:nth-of-type(n){
+    padding-left: 10px;
+  }
 }

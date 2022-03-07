@@ -1,15 +1,30 @@
 //to make dynamic width
+:host ::ng-deep .mat-column-_select {
+  width: 10%;
+}
 :host ::ng-deep .mat-column-a {
-    width: 10%
+  width: 15%
+}
+:host ::ng-deep .mat-column-b {
+  width: 15%
+}
+:host ::ng-deep .mat-column-c {
+  width: 20%
+}
+:host ::ng-deep .mat-column-time {
+  width: 20%
+}
+:host ::ng-deep .mat-column-_editor {
+  width: 20%;
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    max-width: 940px;
-    margin: 0 auto;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 940px;
+  margin: 0 auto;
 }
 .w-100 {
   width: 100%;

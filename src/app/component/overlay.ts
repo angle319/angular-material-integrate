@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingService } from 'library/material-lib/src/public-api';
+import { LoadingService }  from 'library/material-lib/src/public-api';
 @Component({
     selector: 'app-overlays',
     template: `<h2>Loading Overlay</h2>

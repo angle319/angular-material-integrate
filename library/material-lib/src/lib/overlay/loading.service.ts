@@ -2,8 +2,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { MatSpinner } from '@angular/material';
-
+import { MatSpinner } from '@angular/material/progress-spinner';
 import { Subject } from 'rxjs'
 import { scan, map } from 'rxjs/operators'
 
@@ -51,8 +50,8 @@ export class LoadingService implements OnDestroy {
     }
 
     private showSpinner() {
-        console.log('attach')
-        this.spinnerTopRef.attach(new ComponentPortal(MatSpinner))
+        const component= new ComponentPortal(MatSpinner)
+        this.spinnerTopRef.attach(component)
     }
 
     private stopSpinner() {

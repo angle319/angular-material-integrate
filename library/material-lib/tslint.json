@@ -1,7 +1,7 @@
 {
   "extends": "../../tslint.json",
   "rules": {
-    "variable-name": [true, "allow-snake-case"],
+    "variable-name": [true, "allow-leading-underscore", "allow-snake-case"],
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {

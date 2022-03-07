@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SnackbarService } from 'library/material-lib/src/public-api';
+import { SnackbarService }  from 'library/material-lib/src/public-api';
 @Component({
   selector: 'app-toast',
   template: `<h2>Toast</h2>

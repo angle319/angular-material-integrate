@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingDirective } from './loading.directive'
-import { MatSpinner } from '@angular/material';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { MaterialModule } from '../shared/material.module';
 import { SpinnerComponent } from './loading.component';
 
 @NgModule({
     declarations: [LoadingDirective, SpinnerComponent],
     imports: [
-        BrowserModule, BrowserAnimationsModule, MaterialModule
+        CommonModule, BrowserAnimationsModule, MaterialModule
     ],
     exports: [
         BrowserAnimationsModule, LoadingDirective, MaterialModule
     ],
     entryComponents: [
-        MatSpinner, SpinnerComponent
+        MatProgressSpinner, SpinnerComponent
     ]
 })
 export class MaterialOverlayModule { }

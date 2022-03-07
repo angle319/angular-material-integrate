@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSnackBarModule, MatButtonModule } from '@angular/material';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SnackbarComponent } from './snackbar.component';
 
 @NgModule({
@@ -9,10 +9,9 @@ import { SnackbarComponent } from './snackbar.component';
     imports: [
         MatSnackBarModule,
         MatButtonModule,
-        BrowserModule, BrowserAnimationsModule,
+        CommonModule
     ],
     exports: [
-        BrowserAnimationsModule,
     ],
     entryComponents:[
         SnackbarComponent

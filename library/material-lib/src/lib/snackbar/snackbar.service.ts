@@ -5,7 +5,7 @@ import {
     MatSnackBarHorizontalPosition,
     MatSnackBarVerticalPosition,
     MAT_SNACK_BAR_DATA
-} from '@angular/material';
+} from '@angular/material/snack-bar';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { SnackbarComponent } from './snackbar.component';
 import { MaterialSnackModule } from './snack-bar.module';

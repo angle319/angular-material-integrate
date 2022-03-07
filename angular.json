@@ -142,10 +142,10 @@
       "sourceRoot": "library/material-lib/src",
       "projectType": "library",
       "prefix": "mvb",
-      "schematics": {                          
-        "@schematics/angular:component": {      
-          "styleext": "scss"                   
-        }                                       
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
       },
       "architect": {
         "build": {
@@ -178,5 +178,8 @@
       }
     }
   },
-  "defaultProject": "myviewboard"
+  "defaultProject": "myviewboard",
+  "cli": {
+    "analytics": "63d289c3-31ca-4447-a053-11226f3d8d8a"
+  }
 }

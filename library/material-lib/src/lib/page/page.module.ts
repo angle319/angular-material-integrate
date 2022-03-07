@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 import { LoginPageComponent } from './login/login.component';
 import { MaterialModule } from '../shared/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,11 +9,11 @@ import { FocusElDirective } from '../common/focus.directive';
     declarations: [LoginPageComponent, FocusElDirective],
     imports: [
         MaterialModule, FormsModule, ReactiveFormsModule, 
-        BrowserModule, BrowserAnimationsModule, FontAwesomeCommonModule,
+        CommonModule, FontAwesomeCommonModule,
     ],
     exports: [
         MaterialModule,
-        BrowserAnimationsModule, FontAwesomeCommonModule, 
+        FontAwesomeCommonModule,
         LoginPageComponent]
 })
 export class MaterialSimplePageModule { }

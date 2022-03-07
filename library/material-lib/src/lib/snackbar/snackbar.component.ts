@@ -1,7 +1,7 @@
 import { Component, Inject, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import {
     MAT_SNACK_BAR_DATA, MatSnackBarRef
-} from '@angular/material';
+} from '@angular/material/snack-bar';
 import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({

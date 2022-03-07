@@ -3,15 +3,14 @@ import {
     ElementRef, EventEmitter, HostListener, ViewChildren
 } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { fadeIn, fadeOut, fadeInDown } from '../animations/fading'
+import {  fadeOut, fadeInDown } from '../../animations/fading'
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { FocusElDirective } from '../common/focus.directive';
-import { QueryList } from '@angular/core/src/render3';
+import { FocusElDirective } from '../../common/focus.directive';
 import { ENTER, MAC_ENTER } from '@angular/cdk/keycodes';
 @Component({
     selector: 'mvb-login-page',
     templateUrl: `./login.component.html`,
-    styleUrls: ['./login.component.css'],
+    styleUrls: ['./login.component.css', '../../common/common.css'],
     animations: [
         trigger(
             'fadeZoom',
